@@ -5,6 +5,7 @@ import RootLayout from './rootLayout/RootLayout'
 import { useEffect, useState } from 'react'
 import IMovie from './interfaces/IMovie'
 import moviesData from './data/moviesData'
+import MovieDetails from './pages/movieDetails/MovieDetails'
 
 function App() {
 
@@ -21,9 +22,9 @@ function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={ <RootLayout movies={movies} setMovies={ setMovies } moviesChanged={moviesChanged} setMoviesChanged={setMoviesChanged} /> }>
+      <Route path='/' element={ <RootLayout movies={ movies } setMovies={ setMovies } moviesChanged={ moviesChanged } setMoviesChanged={ setMoviesChanged } /> }>
         <Route index element={ <Home movies={ movies } /> } />
-        {/* <Route path='movieDetails' element={ <Home /> } /> */}
+        <Route path='movieDetails/:movieID' element={ <MovieDetails movies={ movies } /> } />
       </Route>
     )
   )
