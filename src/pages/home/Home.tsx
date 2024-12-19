@@ -1,5 +1,6 @@
 import MovieList from "../../components/movieList/MovieList";
 import IMovie from "../../interfaces/IMovie";
+import "./Home.css";
 
 interface IHomeProps {
     movies: IMovie[] | null
@@ -8,7 +9,7 @@ interface IHomeProps {
 const Home: React.FC<IHomeProps> = ({ movies }) => {
     return (  
         <>
-            <section className="show__movies grid">
+            <section className="show__movies">
                 <MovieList movies={ movies } />
             </section>
         </>

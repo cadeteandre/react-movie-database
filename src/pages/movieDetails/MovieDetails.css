@@ -1,4 +1,4 @@
-.show__movies {
+.movie__details {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

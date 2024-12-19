@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import IMovie from "../../interfaces/IMovie";
 import moviesData from "../../data/moviesData";
+import "./MovieDetails.css";
 
 interface IMoviesDetailsProps {
     movies: IMovie[] | null

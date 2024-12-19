@@ -11,7 +11,7 @@ const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
     return ( 
         <>
             {movies.map((singleMovie, index) => (
-                <MovieCard key={index} singleMovie={ singleMovie } />
+                <MovieCard key={index} singleMovie={ singleMovie }/>
             ))}
         </>
     );

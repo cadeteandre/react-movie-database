@@ -3,5 +3,5 @@ header {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+    margin: 20px 0 50px 0;
 }
