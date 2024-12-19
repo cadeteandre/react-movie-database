@@ -10,8 +10,8 @@ const MovieList: React.FC<IMovieListProps> = ({ movies }) => {
     if(!movies) return <p>Loading...</p>
     return ( 
         <>
-            {movies.map((singleMovie) => (
-                <MovieCard singleMovie={singleMovie} />
+            {movies.map((singleMovie, index) => (
+                <MovieCard key={index} singleMovie={ singleMovie } />
             ))}
         </>
     );

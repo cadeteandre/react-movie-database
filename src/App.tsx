@@ -9,15 +9,20 @@ import moviesData from './data/moviesData'
 function App() {
 
   const [movies, setMovies] = useState<IMovie[] | null>(null);
+  const [moviesChanged, setMoviesChanged] = useState<boolean>(false);
 
   useEffect(() => {
-    setMovies(moviesData);
-  }, [])
+    const showMovies = () => {
+      const data = movies ? movies : moviesData;
+      setMovies(data);
+    }
+    showMovies();
+  }, [movies, moviesChanged])
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path='/' element={ <RootLayout /> }>
-        <Route index element={ <Home movies={movies} /> } />
+      <Route path='/' element={ <RootLayout movies={movies} setMovies={ setMovies } moviesChanged={moviesChanged} setMoviesChanged={setMoviesChanged} /> }>
+        <Route index element={ <Home movies={ movies } /> } />
         {/* <Route path='movieDetails' element={ <Home /> } /> */}
       </Route>
     )
